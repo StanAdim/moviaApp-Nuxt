@@ -1,3 +1,6 @@
+<script setup>
+const isLoggedIn = useState('isLoggedIn',()=>false)
+</script>
 <template>
      <div class="main">
       <navBar />

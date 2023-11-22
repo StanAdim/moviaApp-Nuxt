@@ -7,10 +7,11 @@ useHead({
 })
 
 const userId = ref('');
-
+const router = useRoute()
 function login(){
-    alert(userId.value)
     userId.value = ''
+    useIsloggedIn.value = true
+    console.log(useIsloggedIn.value)
 }
 </script>
 
