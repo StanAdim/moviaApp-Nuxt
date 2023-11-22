@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-const isLoggedIn = useIsLoggedIn()
+const store = useAuthStore();
+const {logout} = useAuthStore();
 
 </script>
 <template>
@@ -8,9 +9,9 @@ const isLoggedIn = useIsLoggedIn()
           <NuxtLink class="Nlink" to="/">Home</NuxtLink>
           <NuxtLink class="Nlink" to="/movies">Movies</NuxtLink>
           <NuxtLink class="Nlink" to="/directors">Directors</NuxtLink>
-          <NuxtLink v-if="!isLoggedIn" class="Nlink" to="/auth/login" >Login</NuxtLink>            
+          <NuxtLink v-if="!store.isLoggedIn" class="Nlink" to="/auth/login" >Login</NuxtLink>            
           <template v-else>
-            <a href="#" @click="isLoggedIn = false"   class="Nlink">Logout</a>
+            <a href="#" @click="logout()"   class="Nlink">Logout</a>
           </template>
     </div>
   </div>

@@ -1,5 +1,6 @@
 <script setup>
-const isLoggedIn = useIsLoggedIn();
+const store = useAuthStore();
+const isLoggedIn =store.isLoggedIn;
 </script>
 <template>
     <div class="main">

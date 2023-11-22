@@ -1,7 +1,7 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-  const isLogin = useIsLoggedIn()
+  const store = useAuthStore()
   const alert = useAlert()
-  if (!isLogin.value){
+  if (!store.isLoggedIn){
     alert.value.message = 'Please Login'
     return navigateTo({path:'/auth/login'})
   }

@@ -1,5 +1,8 @@
 <script lang="js" setup>
+import { useAuthStore } from '~/stores/authStore';
+
 const formInput = ref('');
+
 const movies = ref([]);
 const ApiKey = 'cbaea162'
 async function search(query){

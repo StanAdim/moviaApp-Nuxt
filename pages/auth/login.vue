@@ -5,19 +5,19 @@ layout: "clear"
 useHead({
     title:'Login'
 })
-const isLoggedIn = useIsLoggedIn()
+const {login} = useAuthStore();
 const alert = useAlert();
 const userId = ref('');
 const router = useRoute()
-function login(){
+function logUser(){
+    login()
     userId.value = ''
     alert.value.message = ''
-    isLoggedIn.value = true
-    console.log(isLoggedIn.value)}
+}
 </script>
 
 <template>
-    <div class="login">
+    <div class="logUser">
         <template v-if="alert.message">       
                 <p >{{ alert.message }}</p>           
         </template>

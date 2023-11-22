@@ -1,5 +1,4 @@
 <script  setup>
-
 </script>
 <template>
   <div class="text">
@@ -7,6 +6,7 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
        Necessitatibus animi itaque voluptate, libero nostrum odit 
        .</p>
+       
   </div>
 
 </template>
