@@ -5,18 +5,22 @@ layout: "clear"
 useHead({
     title:'Login'
 })
-
+const isLoggedIn = useIsLoggedIn()
+const alert = useAlert();
 const userId = ref('');
 const router = useRoute()
 function login(){
     userId.value = ''
-    useIsloggedIn.value = true
-    console.log(useIsloggedIn.value)
-}
+    alert.value.message = ''
+    isLoggedIn.value = true
+    console.log(isLoggedIn.value)}
 </script>
 
 <template>
     <div class="login">
+        <template v-if="alert.message">       
+                <p >{{ alert.message }}</p>           
+        </template>
         <form @submit.prevent="login">
             <label for="userId"></label>
             <input type="text" v-model="userId" placeholder="User Key" id="userId">
@@ -30,10 +34,20 @@ function login(){
     background-color: #2a2927cf;
     height: 20vh;
     border-radius: .4rem;
+    margin: 4rem .3rem;
 }
 .login form {
-    margin: 4rem .3rem;
-
+    padding: .2rem ;
+    margin: .2rem;
+}
+.login p {
+    color:#17493b;
+    background-color: #fad777;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    padding: .3rem;
+    text-align: center;
+    border-radius: .4rem;
 }
 form input {
     padding: .5rem;

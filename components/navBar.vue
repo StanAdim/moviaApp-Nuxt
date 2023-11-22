@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-const isLoggedIn = useIsloggedIn()
-function logout(){
-  isLoggedIn.value = false
-}
+const isLoggedIn = useIsLoggedIn()
+
 </script>
 <template>
   <div>
@@ -11,8 +9,8 @@ function logout(){
           <NuxtLink class="Nlink" to="/movies">Movies</NuxtLink>
           <NuxtLink class="Nlink" to="/directors">Directors</NuxtLink>
           <NuxtLink v-if="!isLoggedIn" class="Nlink" to="/auth/login" >Login</NuxtLink>            
-          <template v-if="isLoggedIn">
-            <a href="#" @click="logout" v-if="isLoggedIn"  class="Nlink">Logout</a>
+          <template v-else>
+            <a href="#" @click="isLoggedIn = false"   class="Nlink">Logout</a>
           </template>
     </div>
   </div>

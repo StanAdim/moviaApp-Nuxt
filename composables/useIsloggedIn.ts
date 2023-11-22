@@ -1,3 +1,1 @@
-export const useIsloggedIn = () => {
-  return ref(false)
-}
+export const useIsLoggedIn = () => useState<boolean> ('isLoggedIn',()=> false)

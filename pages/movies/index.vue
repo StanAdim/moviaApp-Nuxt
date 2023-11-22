@@ -7,7 +7,7 @@ async function search(query){
     formInput.value = ''
 }
 definePageMeta({
-    middleware:"logger"
+    middleware:"auth"
 })
 useHead({
     title:'Search Movies'
