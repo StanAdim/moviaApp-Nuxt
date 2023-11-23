@@ -8,7 +8,6 @@ useHead({
 const {login} = useAuthStore();
 const alert = useAlert();
 const userId = ref('');
-const router = useRoute()
 function logUser(){
     login()
     userId.value = ''
@@ -17,7 +16,7 @@ function logUser(){
 </script>
 
 <template>
-    <div class="logUser">
+    <div class="logUser()">
         <template v-if="alert.message">       
                 <p >{{ alert.message }}</p>           
         </template>

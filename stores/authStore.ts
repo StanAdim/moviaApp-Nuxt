@@ -14,6 +14,7 @@ export const useAuthStore = defineStore('useAuthStore', {
     actions: {      
       login() {
         this.isLoggedIn = true
+        useRouter().push({path: '/movies'})
       },     
       logout() {
         this.isLoggedIn = false
